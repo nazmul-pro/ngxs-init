@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Shadhin",
+        "dept": "EEE",
+        "roll": 18
+    },
+    {
+        "id": 2,
+        "name": "Saif",
+        "dept": "EEE",
+        "roll": 8
+    },
+    {
+        "id": 3,
+        "name": "Mostak",
+        "dept": "EEE",
+        "roll": 34
+    }
+]
