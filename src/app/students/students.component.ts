@@ -14,13 +14,19 @@ import {DeleteStudent, GetStudents, SetSelectedStudent} from '../actions/student
 export class StudentsComponent implements OnInit {
   @Select(StudentsState.getStudentList) students: Observable<Students[]>;
   constructor(private ss: StudentService,private store: Store) { }
-
+  fst = null;
   ngOnInit() {
     this.students.subscribe(x=>console.log(x));
     console.log();
     this.store.dispatch(new GetStudents());
-    this.students.subscribe(x=>console.log(x));
+    this.students.subscribe(x=>{console.log(x),this.selectStudent(x[0])});
+
     
+  }
+
+  selectStudent(st: Students) {
+    this.fst = st
+    this.store.dispatch(new SetSelectedStudent(st));
   }
 
   deleteStudent(id: number) {
